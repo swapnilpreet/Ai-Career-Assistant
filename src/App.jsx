@@ -1,22 +1,47 @@
-
-import { Route, Routes } from 'react-router-dom'
-import './App.css'
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Signup from './pages/Signup'
-import ResumeAnalyzer from './pages/ResumeAnalyzer'
-import ChatWithPDF from './pages/ChatWithPDF'
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import ResumeAnalyzer from "./pages/ResumeAnalyzer";
+import ChatWithPDF from "./pages/ChatWithPDF";
+import ProtectedRoute from "./component/ProtectedRoute";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
+    <>
+    <ToastContainer/>
     <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='signup' element={<Signup/>}/>
-        <Route path='resume-analyzer' element={<ResumeAnalyzer/>}/>
-        <Route path='/chatwithpdf' element={<ChatWithPDF/>}/>
+      <Route
+        path="/"
+        element={
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        }
+      />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route
+        path="/resume-analyzer"
+        element={
+          <ProtectedRoute>
+            <ResumeAnalyzer />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/chatwithpdf"
+        element={
+          <ProtectedRoute>
+            <ChatWithPDF />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;
