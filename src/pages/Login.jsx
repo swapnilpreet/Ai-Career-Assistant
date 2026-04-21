@@ -27,7 +27,6 @@ const Login = () => {
     }
     sessionStorage.setItem("loggedInuser",JSON.stringify(user));
     toast("Login success")
-    // alert("Login success");
     navigate('/')
   };
 
@@ -51,7 +50,7 @@ const Login = () => {
         <div className="relative mb-4">
           <FaLock className="absolute left-3 top-3 text-gray-400" />
           <input
-            type="password"
+            type={showpassword ? "text" : "password"}
             name="password"
             placeholder="Enter your Password"
             onChange={handleChange}
