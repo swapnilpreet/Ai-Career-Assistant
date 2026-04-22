@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import bcrypt from "bcryptjs";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
+
 const Login = () => {
   const [showpassword, setshowpassword] = useState(false);
   const [formData, setformData] = useState({
@@ -26,13 +26,11 @@ const Login = () => {
       return alert("Invalid Password")
     }
     sessionStorage.setItem("loggedInuser",JSON.stringify(user));
-    toast("Login success")
     navigate('/')
   };
 
   return (
     <>
-    <ToastContainer/>
     <div className="min-h-screen flex items-center justify-center px-4 bg-linear-to-br from-slate-950 via-slate-900 to-slate-800">
       <form onSubmit={handleSubmit} className="w-full max-w-md bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 sm:p-8 shadow-xl">
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-6 bg-linear-to-r from-amber-400 to-red-500 bg-clip-text text-transparent">Login</h2>

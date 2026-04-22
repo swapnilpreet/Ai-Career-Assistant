@@ -6,14 +6,11 @@ import Signup from "./pages/Signup";
 import ResumeAnalyzer from "./pages/ResumeAnalyzer";
 import ChatWithPDF from "./pages/ChatWithPDF";
 import ProtectedRoute from "./component/ProtectedRoute";
-import { ToastContainer } from "react-toastify";
+
 
 function App() {
-  const apiUrl = import.meta.env.VITE_OPENROUTER_APIKEY;
-console.log(apiUrl);
   return (
     <>
-    <ToastContainer/>
     <Routes>
       <Route
         path="/"

@@ -19,7 +19,7 @@ import {
 } from "react-icons/fa";
 import { SiAirtransat } from "react-icons/si";
 
-const testimonials = [
+const testimonials=[
   {
     name: "Rahul Sharma",
     role: "Software Engineer",
@@ -233,33 +233,39 @@ const Home = () => {
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10 bg-linear-to-r from-amber-400 to-red-500 bg-clip-text text-transparent">
           FAQs ❓
         </h2>
-        <div className="max-w-3xl mx-auto space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="border border-white/10 rounded-xl bg-white/5 backdrop-blur-lg"
-            >
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full flex justify-between items-center p-4 text-left"
-              >
-                <span className="font-medium text-sm sm:text-base">
-                  {faq.question}
-                </span>
-                <FaChevronDown
-                  className={`transition-transform duration-300 ${
-                    activeIndex === index ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {activeIndex === index && (
-                <div className="px-4 pb-4 text-gray-300 text-sm sm:text-base">
-                  {faq.answer}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+      <div className="max-w-3xl mx-auto space-y-4">
+  {faqs.map((faq, index) => (
+    <div
+      key={index}
+      className="border border-white/10 rounded-xl bg-white/5 backdrop-blur-lg overflow-hidden"
+    >
+      <button
+        onClick={() => toggleFAQ(index)}
+        className="w-full flex justify-between items-center p-4 text-left"
+      >
+        <span className="font-medium text-sm sm:text-base">
+          {faq.question}
+        </span>
+        <FaChevronDown
+          className={`transition-transform duration-300 ${
+            activeIndex === index ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+
+      {/* Smooth animated content */}
+      <div
+        className={`transition-all duration-300 ease-in-out px-4 text-gray-300 text-sm sm:text-base ${
+          activeIndex === index
+            ? "max-h-40 opacity-100 pb-4"
+            : "max-h-0 opacity-0"
+        } overflow-hidden`}
+      >
+        {faq.answer}
+      </div>
+    </div>
+  ))}
+</div>
       </section>
       <section className="py-16 px-4 sm:px-6 bg-linear-to-r from-amber-500 to-red-500 text-white text-center">
         <div className="max-w-3xl mx-auto">

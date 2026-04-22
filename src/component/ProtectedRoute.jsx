@@ -1,12 +1,11 @@
 import { Navigate } from "react-router-dom";
 
-export default function ProtectedRoute({children}){
-    const User = JSON.parse(sessionStorage.getItem("loggedInuser"))
+export default function ProtectedRoute({ children }) {
+  const user = JSON.parse(sessionStorage.getItem("loggedInuser"));
 
-    if(!User){
-        return <Navigate to="/login"/>;
-    }
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
 
-    return children;
+  return children;
 }
-
