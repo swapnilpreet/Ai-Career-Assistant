@@ -5,6 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
+import { FaRocket } from "react-icons/fa";
 
 const slides = [
   {
@@ -39,6 +40,7 @@ const ImageSlider = () => {
           pagination={{ clickable: true }}
           navigation
           loop={true}
+
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
@@ -64,9 +66,9 @@ const ImageSlider = () => {
 
                     <Link
                       to={slide.btn}
-                      className="inline-block bg-linear-to-r from-amber-500 to-red-500 px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-medium hover:scale-105 transition"
+                      className="inline-flex items-center justify-center gap-2 bg-linear-to-r from-amber-500 to-red-500 px-4 sm:px-6 py-2 sm:py-3 rounded-lg text-sm sm:text-base font-medium hover:scale-105 transition-transform duration-300"
                     >
-                      Explore 🚀
+                      Explore <FaRocket />
                     </Link>
                   </div>
                 </div>

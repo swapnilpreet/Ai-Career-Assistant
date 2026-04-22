@@ -96,7 +96,7 @@ const Home = () => {
               <span className="bg-linear-to-r from-amber-400 to-red-500 bg-clip-text text-transparent">
                 AI Powered
               </span>{" "}
-              Career Tools <SiAirtransat />
+              Career Tools
             </h1>
             <p className="text-gray-400 text-sm sm:text-lg mb-6">
               Analyze resumes, chat with PDFs, and boost your career using
@@ -286,7 +286,7 @@ const Home = () => {
             </Link>
 
             <Link
-              to="/chat-pdf"
+              to="/chatwithpdf"
               className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:scale-105 transition"
             >
               Chat with PDF
@@ -316,7 +316,7 @@ const Home = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/chat-pdf" className="hover:text-white">
+                <Link to="/chatwithpdf" className="hover:text-white">
                   Chat with PDF
                 </Link>
               </li>

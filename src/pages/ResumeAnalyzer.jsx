@@ -169,7 +169,7 @@ Suggestions:
     min-h-screen w-full 
     bg-linear-to-br from-slate-950 via-slate-900 to-slate-800 
     text-white 
-    p-4 sm:p-6 
+    p-4 sm:p-6 pt-20
     transition-all duration-300
     ${showSidebar ? "md:ml-72" : "ml-0"}
   `}
