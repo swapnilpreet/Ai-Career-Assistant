@@ -345,10 +345,10 @@ const Home = () => {
           <div>
             <h4 className="text-white font-semibold mb-3">Follow Us</h4>
             <div className="flex gap-4 text-xl">
-              <a href="#">
+              <a href="https://github.com/swapnilpreet">
                 <FaGithub className="hover:text-white cursor-pointer" />
               </a>
-              <a href="#">
+              <a href="https://www.linkedin.com/in/swapnil-ramteke-460609283/">
                 <FaLinkedin className="hover:text-white cursor-pointer" />
               </a>
               <a href="#">
