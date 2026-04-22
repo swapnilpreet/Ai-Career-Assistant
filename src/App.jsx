@@ -9,6 +9,8 @@ import ProtectedRoute from "./component/ProtectedRoute";
 import { ToastContainer } from "react-toastify";
 
 function App() {
+  const apiUrl = import.meta.env.VITE_OPENROUTER_APIKEY;
+console.log(apiUrl);
   return (
     <>
     <ToastContainer/>
